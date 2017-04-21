@@ -4,7 +4,7 @@ Best IoC Container ever
 
 ```es6
 const path = require('path');
-const Di = require('../index.js');
+const Di = require('mustdi');
 const notNodeModule = path.join(__dirname, '**/!node_modules/**/*');
 const isBean = path.join(__dirname, '**/*.bean.js');
 const core = new Di.Core(notNodeModule, isBean);
