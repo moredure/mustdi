@@ -10,6 +10,9 @@ class F2 {
     this.s3 = s3;
     console.log(F2.name);
   }
+  run() {
+     this.s3.run();
+  }
 }
 
 module.exports = F2;

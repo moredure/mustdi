@@ -9,7 +9,7 @@ class F1 {
     console.log(F1.name);
   }
   run() {
-    console.log('holy shit');
+    this.f2.run();
   }
 }
 
