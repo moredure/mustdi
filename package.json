@@ -1,0 +1,15 @@
+{
+  "name": "mustdi",
+  "version": "1.0.1",
+  "description": "Dependency Injection IoC Container",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mikhail Faraponov",
+  "license": "MIT",
+  "dependencies": {
+    "doctrine": "^2.0.0",
+    "globby": "^6.1.0"
+  }
+}
