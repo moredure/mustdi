@@ -5,7 +5,9 @@
 const Di = {
   Package: require('./beans/package.bean.js'),
   Container: require('./beans/container.bean.js'),
-  RecursiveDiStrategy: require('./beans/recursive-di-strategy.bean.js'),
+  RecursiveStrategy: require('./beans/recursive-strategy.bean.js'),
+  ClassesResolver: require('./beans/classes-resolver.bean.js'),
 };
 
 module.exports = Di;
+
