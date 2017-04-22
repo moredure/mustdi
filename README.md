@@ -1,6 +1,7 @@
 # mustdi
 ---
 Best IoC Container for Js ever!!! WIth package system
+Main idea to use comments as meta information about types in classes
 See example with [expressjs](https://github.com/mikefaraponov/mustdi-express-js-example) application.
 
 As simple as `container.getBean('BestBeanEver')`:
