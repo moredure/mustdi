@@ -1,6 +1,6 @@
 {
   "name": "mustdi",
-  "version": "1.0.4",
+  "version": "0.0.6",
   "description": "Dependency Injection IoC Container",
   "author": "Mikhail Faraponov",
   "main": "src/index.js",
