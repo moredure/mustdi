@@ -1,9 +1,9 @@
-const Di = require('./src');
+const Di = require('../src');
 
 class TestApplication {
   static main() {
     let appModules = new Di.Package(__dirname, [
-      './fixtures/*.bean.js'
+      './test-beans/*.bean.js'
     ]);
 
     let classResolver = new Di.ClassesResolver(appModules);
