@@ -1,27 +1,33 @@
 # mustdi
 ---
-Best IoC Container ever
+Best IoC Container for Js ever!!! WIth package system
+See example with [expressjs](https://github.com/mikefaraponov/mustdi-express-js-example) application.
+
+As simple as `container.getBean('BestBeanEver')`:
 
 ```es6
-const Di = require('./src');
+const Di = require('mustdi');
 
-class TestApplication {
+class ExpressTestApplication {
+  /**
+   * Main method as main in java ;)
+   * With Js and mustdi nothing is impossible
+   */
   static main() {
-    let appModules = new Di.Package(__dirname, [
-      './fixtures/*.bean.js'
+    const container = new Di.DefaultContainer(__dirname, [
+      './controllers/*.ctrl.js',
+      './server/*.server.js',
+      './events/*.bean.js',
+      './db-adapters/*.db.js',
+      './models/*.model.js',
+      './routers/*.router.js',
+      './config/*.config.js',
     ]);
-
-    let classResolver = new Di.ClassesResolver(appModules);
-
-    let recursiveDiStrategy = new Di.RecursiveStrategy();
-
-    let container = new Di.Container(classResolver, recursiveDiStrategy);
-
-    container.getBean('Ninja').run();
+    container.getBean('Server').start();
   }
 }
 
 if (require.main === module) {
-  TestApplication.main();
+  ExpressTestApplication.main();
 }
 ```
