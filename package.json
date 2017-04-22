@@ -1,12 +1,16 @@
 {
   "name": "mustdi",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Dependency Injection IoC Container",
+  "author": "Mikhail Faraponov",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Mikhail Faraponov",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/mikefaraponov/mustdi.git"
+  },
   "license": "MIT",
   "dependencies": {
     "doctrine": "^2.0.0",

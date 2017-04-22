@@ -3,16 +3,25 @@
 Best IoC Container ever
 
 ```es6
-const path = require('path');
-const Di = require('mustdi');
+const Di = require('./src');
 
-const notNodeModule = path.join(__dirname, '**/!node_modules/**/*');
-const isBean = path.join(__dirname, '**/*.bean.js');
+class TestApplication {
+  static main() {
+    let appModules = new Di.Package(__dirname, [
+      './fixtures/*.bean.js'
+    ]);
 
-const core = new Di.Core(notNodeModule, isBean);
-const diRecursiveResolverStrategy = new Di.RecursiveResolverStrategy();
-const container = new Di.Container(core, diRecursiveResolverStrategy);
+    let classResolver = new Di.ClassesResolver(appModules);
 
-const bestClassEver = container.getBean('F1');
-bestClassEver.run();
+    let recursiveDiStrategy = new Di.RecursiveStrategy();
+
+    let container = new Di.Container(classResolver, recursiveDiStrategy);
+
+    container.getBean('Ninja').run();
+  }
+}
+
+if (require.main === module) {
+  TestApplication.main();
+}
 ```
