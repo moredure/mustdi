@@ -5,9 +5,12 @@ See example with [expressjs](https://github.com/mikefaraponov/mustdi-express-js-
 
 As simple as `container.getBean('BestBeanEver')`:
 
-```es6
+```js
 const Di = require('mustdi');
 
+/**
+ * ExpressTestApplication class
+ */
 class ExpressTestApplication {
   /**
    * Main method as main in java ;)
@@ -15,19 +18,19 @@ class ExpressTestApplication {
    */
   static main() {
     const container = new Di.DefaultContainer(__dirname, [
+      './app/*.bean.js',
       './controllers/*.ctrl.js',
-      './server/*.server.js',
-      './events/*.bean.js',
       './db-adapters/*.db.js',
       './models/*.model.js',
       './routers/*.router.js',
       './config/*.config.js',
+      './loggers/*.logger.js',
     ]);
     container.getBean('Server').start();
   }
 }
 
-if (require.main === module) {
+if (module === require.main) {
   ExpressTestApplication.main();
 }
 ```
