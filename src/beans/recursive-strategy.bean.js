@@ -7,8 +7,6 @@ const {SINGLET} = require('../constants');
 class RecursiveStrategy {
   /**
    * RecursiveDiStrategy constructor
-   * @param  {Array} metadataResolvers strategies
-   * for resolving different dependencies metadata
    * @param  {WeakMap} cache for singletons instanciation
    */
   constructor(cache = new WeakMap()) {
