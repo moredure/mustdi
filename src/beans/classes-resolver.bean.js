@@ -19,7 +19,7 @@ class ClassesResolver {
     });
   }
   _isParam(tag) {
-    return tag.type && tag.type.name && tag.title === 'param';
+    return tag.title === 'param' && tag.type && tag.type.name;
   }
   _isSingleton(tag) {
     return tag.title === SINGLETON;
@@ -34,10 +34,15 @@ class ClassesResolver {
       throw new TypeError('Error with config parsing ' + e.message);
     }
     Class.isSingleton = !!tags.find(this._isSingleton);
+    const method = tags.find(this._isMethod);
+    Class.factoryMethod = method && method.name || null;
     Class.dependencies = tags
       .filter(this._isParam)
       .map(this._parseMeta(classes));
     return Class;
+  }
+  _isMethod(tag) {
+    return tag.title === 'method';
   }
   _parseMeta(classes) {
     return function(tag) {

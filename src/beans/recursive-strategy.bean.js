@@ -55,7 +55,15 @@ class RecursiveStrategy {
       args.push(injection);
     }
 
-    return Reflect.construct(dependent, args);
+    let instance =  Reflect.construct(dependent, args);
+
+    if (dependent.factoryMethod) {
+      return instance[dependent.factoryMethod](...[]);
+
+    } else {
+      return instance;
+
+    }
   }
 }
 
