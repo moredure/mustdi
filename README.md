@@ -35,3 +35,6 @@ if (module === require.main) {
   ExpressTestApplication.main();
 }
 ```
+
+## Sponsors
+[ScalableSpace](https://scalablespace.net) and [ScaleChamp](https://scalechamp.com)
