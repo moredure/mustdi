@@ -37,4 +37,4 @@ if (module === require.main) {
 ```
 
 ## Sponsors
-[ScalableSpace](https://scalablespace.net) and [ScaleChamp](https://scalechamp.com)
+[ScaleChamp](https://scalechamp.com)
